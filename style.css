@@ -1,0 +1,167 @@
+/* ==== GOOGLE FONT IMPORT ==== */
+/* "Caveat" = handschritfliche Schrift für Überschriften */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+/* ==== GRUNDEINSTELLUNGEN ==== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #fdf6f0;
+	color: #4a4a4a;
+	line-height: 1.6;
+}
+
+/* ===== NAVIGATION (MENÜ OBEN) ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fdf6f0;
+}
+
+nav .herz {
+	color: #e8a9b8;
+	font-size: 24px;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	gap: 30px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #4a4a4a;
+	font-size: 15px;
+	font-weight: 500;
+	transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.aktiv {
+	color: #4a4a4a;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.aktiv {
+    color: #e8a9b8;
+    border-bottom: 2px solid #e8a9b8;
+    padding-bottom: 4px;
+}
+
+/* ===== ÜBERSCHRIFTEN ===== */
+h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 64px;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+
+h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 42px;
+    font-weight: 600;
+    color: #4a4a4a;
+}
+
+/* ===== HERO-BEREICH (oberster Bereich der Startseite) ===== */
+.hero {
+    padding: 60px 40px;
+    max-width: 600px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #7a7a7a;
+    margin: 15px 0 25px 0;
+}
+
+.button {
+    display: inline-block;
+    background-color: #f3d4da;
+    color: #4a4a4a;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* ===== POLAROID-FOTOS ===== */
+.polaroid {
+    background: white;
+    padding: 12px 12px 35px 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    display: inline-block;
+    transform: rotate(-2deg);
+    transition: transform 0.3s;
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.03);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background-color: #e8d5d0; /* Platzhalter-Farbe statt echtem Foto */
+    border-radius: 2px;
+}
+
+.polaroid-text {
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 8px;
+    color: #5a5a5a;
+}
+
+/* ===== KLEBEZETTEL (STICKY NOTES) ===== */
+.zettel {
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    min-height: 100px;
+}
+
+.zettel.rosa { background-color: #f3d4da; }
+.zettel.blau { background-color: #cfe0e8; }
+.zettel.gelb { background-color: #f5e6b8; }
+.zettel.gruen { background-color: #d9e4d3; }
+
+/* ===== GALERIE-RASTER ===== */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    padding: 20px 40px 60px 40px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #a8a8a8;
+    font-size: 13px;
+}
