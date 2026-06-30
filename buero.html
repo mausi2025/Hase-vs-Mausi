@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemeinsame Momente im Büro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <span class="herz">&hearts;</span>
+        <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="erinnerungen.html">Erinnerungen</a></li>
+            <li><a href="orte.html">Orte</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+        </ul>
+        <span class="herz">&hearts;</span>
+    </nav>
+
+    <section class="hero">
+        <a href="index.html" style="text-decoration: none; color: #a8a8a8; font-size: 14px;">&larr; Zurück zur Startseite</a>
+        <h2>Gemeinsame Momente im Büro</h2>
+    </section>
+
+    <div class="album-wrapper">
+        <div class="album-buch">
+            <div class="album-seiten" id="album-seiten">
+
+                <!-- Buchseite 1 (linke Seite) -->
+                <div class="album-seite seite-aktiv" data-seite="1">
+                    <div class="album-foto foto-1">
+                        <img src="">
+                        <p class="album-foto-text">Unser erstes Foto im Büro</p>
+                    </div>
+                    <div class="album-foto foto-2">
+                        <img src="">
+                        <p class="album-foto-text">Kaffeepause & gute Gespräche</p>
+                    </div>
+                    <div class="album-foto foto-3">
+                        <img src="">
+                        <p class="album-foto-text">Lachen ohne Ende</p>
+                    </div>
+                </div>
+
+                <!-- Buchseite 2 (rechte Seite von Doppelseite 1, anfangs versteckt) -->
+                <div class="album-seite" data-seite="2" style="display: none;">
+                    <div class="album-foto foto-1">
+                        <img src="">
+                        <p class="album-foto-text">Weihnachtsfeier 2024</p>
+                    </div>
+                    <div class="album-foto foto-2">
+                        <img src="">
+                        <p class="album-foto-text">Wenn der Kopierer mal wieder streikt</p>
+                    </div>
+                    <div class="album-foto foto-3">
+                        <img src="">
+                        <p class="album-foto-text">Kuchen geht immer!</p>
+                    </div>
+                </div>
+
+                <!-- Buchseite 3 (linke Seite von Doppelseite 2, anfangs versteckt) -->
+                <div class="album-seite" data-seite="3" style="display: none;">
+                    <div class="album-foto foto-1">
+                        <img src="">
+                        <p class="album-foto-text">Zwei gegen den Rest des Büros</p>
+                    </div>
+                    <div class="album-foto foto-2">
+                        <img src="">
+                        <p class="album-foto-text">Spaziergang in der Mittagspause</p>
+                    </div>
+                    <div class="album-foto foto-3">
+                        <img src="">
+                        <p class="album-foto-text">Mein Lieblingsmoment</p>
+                    </div>
+                </div>
+
+                <!-- Buchseite 4 (rechte Seite von Doppelseite 2, anfangs versteckt) -->
+                <div class="album-seite" data-seite="4" style="display: none;">
+                    <div class="album-foto foto-1">
+                        <img src="">
+                        <p class="album-foto-text">Ein ganz normaler Tag</p>
+                    </div>
+                    <div class="album-foto foto-2">
+                        <img src="">
+                        <p class="album-foto-text">Feierabendbier</p>
+                    </div>
+                    <div class="album-foto foto-3">
+                        <img src="">
+                        <p class="album-foto-text">Noch eine schöne Erinnerung</p>
+                    </div>
+                </div>
+
+                <!-- Buchseite 5 (linke Seite von Doppelseite 3, anfangs versteckt) -->
+                <div class="album-seite" data-seite="5" style="display: none;">
+                    <div class="album-foto foto-1">
+                        <img src="">
+                        <p class="album-foto-text">Platzhalter Foto 1</p>
+                    </div>
+                    <div class="album-foto foto-2">
+                        <img src="">
+                        <p class="album-foto-text">Platzhalter Foto 2</p>
+                    </div>
+                    <div class="album-foto foto-3">
+                        <img src="">
+                        <p class="album-foto-text">Platzhalter Foto 3</p>
+                    </div>
+                </div>
+
+                <!-- Buchseite 6 (rechte Seite von Doppelseite 3, anfangs versteckt) -->
+                <div class="album-seite" data-seite="6" style="display: none;">
+                    <div class="album-foto foto-1">
+                        <img src="">
+                        <p class="album-foto-text">Platzhalter Foto 4</p>
+                    </div>
+                    <div class="album-foto foto-2">
+                        <img src="">
+                        <p class="album-foto-text">Platzhalter Foto 5</p>
+                    </div>
+                    <div class="album-foto foto-3">
+                        <img src="">
+                        <p class="album-foto-text">Platzhalter Foto 6</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="album-navigation">
+                <button class="album-button" id="zurueck-button" onclick="vorherigeSeite()" disabled>&larr; Zurück</button>
+                <span class="album-seitenzahl" id="seitenzahl-anzeige">Doppelseite 1 von 3</span>
+                <button class="album-button" id="weiter-button" onclick="naechsteSeite()">Weiter &rarr;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Mit Liebe gemacht &hearts;</p>
+    </footer>
+
+    <script>
+        let aktuelleDoppelseite = 1;
+        const anzahlDoppelseiten = 3;
+
+        function zeigeDoppelseite(nummer) {
+            // alle einzelnen Buchseiten erstmal verstecken
+            const alleSeiten = document.querySelectorAll('.album-seite');
+            alleSeiten.forEach(function(seite) {
+                seite.style.display = 'none';
+            });
+
+            // die zwei zusammengehörigen Seiten der Doppelseite anzeigen
+            // z.B. Doppelseite 1 = Buchseite 1 + 2, Doppelseite 2 = Buchseite 3 + 4, usw.
+            const linkeSeite = (nummer * 2) - 1;
+            const rechteSeite = nummer * 2;
+
+            document.querySelector('[data-seite="' + linkeSeite + '"]').style.display = 'flex';
+            document.querySelector('[data-seite="' + rechteSeite + '"]').style.display = 'flex';
+
+            // Seitenzahl-Anzeige aktualisieren
+            document.getElementById('seitenzahl-anzeige').textContent = 'Doppelseite ' + nummer + ' von ' + anzahlDoppelseiten;
+
+            // Buttons aktivieren/deaktivieren, je nachdem wo man ist
+            document.getElementById('zurueck-button').disabled = (nummer === 1);
+            document.getElementById('weiter-button').disabled = (nummer === anzahlDoppelseiten);
+        }
+
+        function naechsteSeite() {
+            if (aktuelleDoppelseite < anzahlDoppelseiten) {
+                aktuelleDoppelseite = aktuelleDoppelseite + 1;
+                zeigeDoppelseite(aktuelleDoppelseite);
+            }
+        }
+
+        function vorherigeSeite() {
+            if (aktuelleDoppelseite > 1) {
+                aktuelleDoppelseite = aktuelleDoppelseite - 1;
+                zeigeDoppelseite(aktuelleDoppelseite);
+            }
+        }
+    </script>
+
+</body>
+</html>
